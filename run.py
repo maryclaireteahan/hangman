@@ -11,46 +11,58 @@ def pick_word():
     return word.upper()
 
 
+        # print("\nGreat! Listen up!\n")
+        # print(
+        #     "\nRULES\n1. Pick a letter.\n2. If the letter is in the word" +
+        #     " you'll see it appear in the missing letters sections.\n3." +
+        #     " If the letter is incorrect it'll appear in the guessed letters" +
+        #     " section.\n4. Be careful, each time you get a letter wrong" +
+        #     " you'll get closer to hanging the man. It'll only take 6 wrong" +
+        #     " moves to kill him, so choose wisely.\n"
+        # )
+        # ready = input("\nAre you ready? Y/N \n").upper()
+        # if ready == "Y":
+        #     print("\nLet's go!\n")
+        #     play_game(word)
+        # elif ready == "N":
+        #     print("\nThat's okay.\n")
+        #     main_menu()
+        # else:
+        #     understand = input("Do you understand the rules? Y/N\n").upper()
+        #     if understand == "Y":
+        #         print("\nLet's go!\n")
+        #         play_game(word)
+        #     elif understand == "N":
+        #         main_menu()
+        #     else:
+        #         print("\nHave it your way, back to the main menu!\n")
+        #         main_menu()
+
+
+
+
 word = pick_word()
 
-def rules():
-    print("\nGreat! Listen up!\n")
-    print("\nRULES\n1. Pick a letter.\n2. If the letter is in the word" +
-          " you'll see it appear in the missing letters sections.\n3." +
-          " If the letter is incorrect it'll appear in the guessed letters" +
-          " section.\n4. Be careful, each time you get a letter wrong" +
-          " you'll get closer to hanging the man. It'll only take 6 wrong" +
-          " moves to kill him, so choose wisely.\n")
-    understand = input("\nOkay then, are you ready to play? Y/N\n").upper()
-    if understand == "Y":
-        print("\nLet's go!\n")
-        play_game(word)
-    elif understand == "N":
-        print("\nNo problem, I'll take you back to the main menu.\n")
-        main_menu()
-
-
 def main_menu():
-    gamerules = input("\nWould you like to hear the rules? Y/N\n").upper()
-    if gamerules == "Y":
-        rules()
-    elif gamerules == "N":
-        answer = input("\nOkay then, are you ready to play? Y/N\n").upper()
-        if answer == "Y":
-            print("\nLet's go!\n")
-            play_game(word)
-        elif answer == "N":
-            print("\nThat's okay.\n")
-            main_menu()
+    before_play = True
+    while before_play:
+        play_now = input("\nWould you like to play? Y/N\n").upper()
+        if play_now == "Y":
+            before_rules = True
+            while before_rules:
+                game_rules = input("\nWould you like to read the rules? " + 
+                                   "Y/N\n").upper()
+                if game_rules == "Y":
+                    rules()
+                elif game_rules == "N":
+                    play_game()
+                else:
+                    print("\nYour options are Y or N..." + 
+                          "Try again.")
+        elif play_now == "N":
+            print("\nThat's too bad, adios!\n")
         else:
-            while answer != "Y" or "N":
-                print("That's not a valid choice try again!")
-                gamerules
-    elif answer == "N":
-        print("\nThat's too bad, adios!\n")
-    else:
-        print("\nThat wasn't an option...\n")
-        main_menu()
+            print("\nThat wasn't an option...\n")
 
 
 def play_game(word):
