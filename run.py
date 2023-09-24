@@ -41,8 +41,7 @@ def main_menu():
         main_menu()
 
 def play_game(word):
-    letters= []
-    letters.append("_ " * len(word))
+    letters= "_ " * len(word)
     correct_word = list(word)
     lives = 6
     letters_guessed = []
@@ -61,15 +60,13 @@ def play_game(word):
                 print(f"\nGood choice! {guess} is in the word!\n")
                 letters_guessed.append(guess)
                 correct_letters.append(guess)
-# ================================================================================
-            
-            #    if guess in correct_word:
-            #         for index, letter in enumerate(letters):
-            #             while letters.index(letter) == correct_guess.index(guess):
-            #                 letters[index].append(guess)
-            #     print(letters)8
-            # 
-#==================================================================================
+                correct_word = list(letters)
+                indices = [i for i, letter in enumerate(word) if letter == guess]
+                for index in indices:
+                    correct_word[index] = guess
+                letters = "".join(correct_word)
+                if "_" not in letters:
+                    guessed = True
                 print(f"\nlives = {lives}\n")
                 print("=========================================")
             elif guess not in word:
