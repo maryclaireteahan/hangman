@@ -39,3 +39,71 @@ def main_menu():
     else:
         print("\nThat wasn't an option...\n")
         main_menu()
+
+def play_game(word):
+    letters= []
+    letters.append("_ " * len(word))
+    correct_word = list(word)
+    lives = 6
+    letters_guessed = []
+    correct_letters = []
+    guessed = False
+    print(f"\nlives = {lives}\n")
+    while not guessed and lives > 0:
+        print(f"\n{letters}\n")
+        guess = input("\nChoose a letter: \n").upper()
+        if guess.isalpha() and len(guess) == 1:
+            if guess in letters_guessed:
+                print("\nYou already picked that letter\n")
+                print(f"\nlives = {lives}\n")
+                print("=========================================")
+            elif guess in word:
+                print(f"\nGood choice! {guess} is in the word!\n")
+                letters_guessed.append(guess)
+                correct_letters.append(guess)
+# ================================================================================
+            
+            #    if guess in correct_word:
+            #         for index, letter in enumerate(letters):
+            #             while letters.index(letter) == correct_guess.index(guess):
+            #                 letters[index].append(guess)
+            #     print(letters)8
+            # 
+#==================================================================================
+                print(f"\nlives = {lives}\n")
+                print("=========================================")
+            elif guess not in word:
+                print(f"\n{guess} isn't in the word\n")
+                letters_guessed.append(guess)
+                lives = lives - 1
+                print(f"\nlives = {lives}\n")
+                print("=========================================")
+        elif not guess.isalpha() or len(guess) != 1:
+            print("\nNope, can't pick that. You have to choose a single letter.\nTry again.\n")
+            print("=========================================")
+    if lives == 0:
+        print("\nSorry you lost.\n")
+        print(f"\nThe word was {word}.\n")
+        play_again = input("\nPlay again? Y/N\n")
+        if play_again == "Y":
+            print("\nGreat, let's play!\n")
+            play_game()
+        elif play_again == "N":
+            print("\nOkay, I'll bring you back to the main menu incase you change your mind.\n")
+            main_menu()
+        else:
+            print("\n I don't know what you're trying to say so I'll just bring you to the main menu.")
+            main_menu()
+    if correct_word == correct_letters:
+        print(f"\nCongratulations! You guessed the word {word}!.\n")
+        play_again = input("\nPlay again? Y/N\n")
+        if play_again == "Y":
+            print("\nGreat, let's play!\n")
+            play_game()
+        elif play_again == "N":
+            print("\nOkay, I'll bring you back to the main menu incase you change your mind.\n")
+            main_menu()
+        else:
+            print("\n I don't know what you're trying to say so I'll just bring you to the main menu.")
+            main_menu()
+
