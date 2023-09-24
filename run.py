@@ -5,9 +5,11 @@ from words import word_list
 print("\nWelcome to HANGMAN!")
 print("-------------------")
 
+
 def pick_word():
     word = random.choice(word_list)
     return word.upper()
+
 
 word = pick_word()
 
@@ -16,16 +18,23 @@ def main_menu():
     answer = input("\nWould you like to play? Y/N\n").upper()
     if answer == "Y":
         print("\nGreat! Listen up!\n")
-        print("\nRULES\n1. Pick a letter.\n2. If the letter is in the word you'll see it appear in the missing letters sections.\n3. If the letter is incorrect it'll appear in the guessed letters section.\n4. Be careful, each time you get a letter wrong you'll get closer to hanging the man. It'll only take 6 wrong moves to kill him, so choose wisely.\n")
+        print(
+            "\nRULES\n1. Pick a letter.\n2. If the letter is in the word" +
+            " you'll see it appear in the missing letters sections.\n3." +
+            " If the letter is incorrect it'll appear in the guessed letters" +
+            " section.\n4. Be careful, each time you get a letter wrong" +
+            " you'll get closer to hanging the man. It'll only take 6 wrong" +
+            " moves to kill him, so choose wisely.\n"
+        )
         ready = input("\nAre you ready? Y/N \n").upper()
         if ready == "Y":
             print("\nLet's go!\n")
             play_game(word)
         elif ready == "N":
-            print("\nThat's okay but I'll make you read the rules again if you change your mind.\n")
+            print("\nThat's okay.\n")
             main_menu()
         else:
-            understand = input("Do you understand the rules or not? Y/N\n").upper()
+            understand = input("Do you understand the rules? Y/N\n").upper()
             if understand == "Y":
                 print("\nLet's go!\n")
                 play_game(word)
@@ -40,8 +49,9 @@ def main_menu():
         print("\nThat wasn't an option...\n")
         main_menu()
 
+
 def play_game(word):
-    letters= "_ " * len(word)
+    letters = "_ " * len(word)
     correct_word = list(word)
     lives = 6
     letters_guessed = []
@@ -61,7 +71,8 @@ def play_game(word):
                 letters_guessed.append(guess)
                 correct_letters.append(guess)
                 correct_word = list(letters)
-                indices = [i for i, letter in enumerate(word) if letter == guess]
+                indices = [i for i, letter in enumerate(word)
+                           if letter == guess]
                 for index in indices:
                     correct_word[index] = guess
                 letters = "".join(correct_word)
@@ -76,7 +87,9 @@ def play_game(word):
                 print(f"\nlives = {lives}\n")
                 print("=========================================")
         elif not guess.isalpha() or len(guess) != 1:
-            print("\nNope, can't pick that. You have to choose a single letter.\nTry again.\n")
+            print("\nNope, can't pick that." +
+                  "You have to choose a single letter." +
+                  "\nTry again.\n")
             print("=========================================")
     if lives == 0:
         print("\nSorry you lost.\n")
@@ -86,10 +99,10 @@ def play_game(word):
             print("\nGreat, let's play!\n")
             play_game()
         elif play_again == "N":
-            print("\nOkay, I'll bring you back to the main menu incase you change your mind.\n")
+            print("\nI'll bring you back to the main menu.\n")
             main_menu()
         else:
-            print("\n I don't know what you're trying to say so I'll just bring you to the main menu.")
+            print("\nI'll just bring you to the main menu.")
             main_menu()
     if correct_word == correct_letters:
         print(f"\nCongratulations! You guessed the word {word}!.\n")
@@ -98,13 +111,16 @@ def play_game(word):
             print("\nGreat, let's play!\n")
             play_game()
         elif play_again == "N":
-            print("\nOkay, I'll bring you back to the main menu incase you change your mind.\n")
+            print("\nOkay," +
+                  "back to the main menu incase you change your mind.\n")
             main_menu()
         else:
-            print("\n I don't know what you're trying to say so I'll just bring you to the main menu.")
+            print("\n I'm just gonna bring you to the main menu.")
             main_menu()
+
 
 def main():
     main_menu()
+
 
 main()
