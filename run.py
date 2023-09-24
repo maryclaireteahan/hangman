@@ -107,3 +107,7 @@ def play_game(word):
             print("\n I don't know what you're trying to say so I'll just bring you to the main menu.")
             main_menu()
 
+def main():
+    main_menu()
+
+main()
