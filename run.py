@@ -78,7 +78,7 @@ def print_lives(lives):
 
 
 def play_game(word):
-    word = "FRIDAY" # change back to pick_word()
+    word = pick_word()
     letters = "_" * len(word)
     lives = 6
     letters_guessed = []
@@ -98,7 +98,8 @@ def play_game(word):
                 letters_guessed.append(guess)
                 correct_letters.append(guess)
                 correct_word = list(letters)
-                indices = [i for i, letter in enumerate(word) if letter == guess]
+                indices = [i for i, letter in enumerate(word)
+                           if letter == guess]
                 for index in indices:
                     correct_word[index] = guess
                 letters = "".join(correct_word)
