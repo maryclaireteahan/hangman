@@ -103,29 +103,31 @@ def play_game(word):
     if lives == 0:
         print("\nSorry you lost.\n")
         print(f"\nThe word was {word}.\n")
-        play_again = input("\nPlay again? Y/N\n").upper()
-        if play_again == "Y":
-            print("\nGreat, let's play!\n")
-            play_game(word)
-        elif play_again == "N":
-            print("\nI'll bring you back to the main menu.\n")
-            main_menu()
-        else:
-            print("\nI'll just bring you to the main menu.")
-            main_menu()
+        lose = True
+        while lose:
+            play_again = input("\nPlay again? Y/N\n").upper()
+            if play_again == "Y":
+                print("\nGreat, let's play!\n")
+                play_game(word)
+            elif play_again == "N":
+                print("\nI'll bring you back to the main menu.\n")
+                main_menu()
+            else:
+                print("\nThat isn't a valid choice.")
     if correct_word == correct_letters:
-        print(f"\nCongratulations! You guessed the word {word}!.\n")
-        play_again = input("\nPlay again? Y/N\n")
-        if play_again == "Y":
-            print("\nGreat, let's play!\n")
-            play_game(word)
-        elif play_again == "N":
-            print("\nOkay," +
-                  "back to the main menu incase you change your mind.\n")
-            main_menu()
-        else:
-            print("\n I'm just gonna bring you to the main menu.")
-            main_menu()
+        win = True
+        while win:
+            print(f"\nCongratulations! You guessed the word {word}!.\n")
+            play_again = input("\nPlay again? Y/N\n")
+            if play_again == "Y":
+                print("\nGreat, let's play!\n")
+                play_game(word)
+            elif play_again == "N":
+                print("\nOkay," +
+                    "back to the main menu incase you change your mind.\n")
+                main_menu()
+            else:
+                print("\nThat isn't a valid choice.")
 
 
 def main():
