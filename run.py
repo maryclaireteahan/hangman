@@ -31,7 +31,7 @@ def rules():
             print("\nLet's go!\n")
             play_game(word)
         elif understand == "N":
-            print("No problem, lets go back to the main menu.")
+            print("\nNo problem, lets go back to the main menu.\n")
             main_menu()
         else:
             print("\nYour options are clear, Y or N...\n")
@@ -49,7 +49,7 @@ def main_menu():
                 if game_rules == "Y":
                     rules()
                 elif game_rules == "N":
-                    play_game()
+                    play_game(word)
                 else:
                     print("\nYour options are Y or N..." +
                           "Try again.")
@@ -57,6 +57,20 @@ def main_menu():
             print("\nThat's too bad, adios!\n")
         else:
             print("\nThat wasn't an option...\n")
+
+
+def game_over():
+    after_play = True
+    while after_play:
+        play_again= input("\nPlay again? Y/N\n").upper()
+        if play_again == "Y":
+            print("\nGreat, let's play!\n")
+            play_game(word)
+        elif play_again == "N":
+            print("\nI'll bring you back to the main menu.\n")
+            main_menu()
+        else:
+            print("\nThat isn't a valid choice.")
 
 
 def play_game(word):
@@ -103,31 +117,10 @@ def play_game(word):
     if lives == 0:
         print("\nSorry you lost.\n")
         print(f"\nThe word was {word}.\n")
-        lose = True
-        while lose:
-            play_again = input("\nPlay again? Y/N\n").upper()
-            if play_again == "Y":
-                print("\nGreat, let's play!\n")
-                play_game(word)
-            elif play_again == "N":
-                print("\nI'll bring you back to the main menu.\n")
-                main_menu()
-            else:
-                print("\nThat isn't a valid choice.")
+        game_over()
     if correct_word == correct_letters:
-        win = True
-        while win:
-            print(f"\nCongratulations! You guessed the word {word}!.\n")
-            play_again = input("\nPlay again? Y/N\n")
-            if play_again == "Y":
-                print("\nGreat, let's play!\n")
-                play_game(word)
-            elif play_again == "N":
-                print("\nOkay," +
-                    "back to the main menu incase you change your mind.\n")
-                main_menu()
-            else:
-                print("\nThat isn't a valid choice.")
+        print(f"\nCongratulations! You guessed the word {word}!.\n")
+        game_over()
 
 
 def main():
