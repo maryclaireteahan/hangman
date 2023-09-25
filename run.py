@@ -77,10 +77,9 @@ def print_lives(lives):
     print(f"\nlives = {lives}\n")
 
 
-
 def play_game(word):
     word = "FRIDAY" # change back to pick_word()
-    letters = "_ " * len(word)
+    letters = "_" * len(word)
     lives = 6
     letters_guessed = []
     correct_letters = []
@@ -124,7 +123,7 @@ def play_game(word):
         print("\nSorry you lost.\n")
         print(f"\nThe word was {word}.\n")
         game_over()
-    if list(word) in correct_letters:
+    if correct_word == correct_letters:
         print(f"\nCongratulations! You guessed the word {word}!.\n")
         game_over()
 
