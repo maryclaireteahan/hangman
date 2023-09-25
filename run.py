@@ -7,12 +7,10 @@ print("-------------------")
 
 
 def pick_word():
-    word = random.choice(word_list)
-    return word.upper()
-
+    the_word = random.choice(word_list)
+    return the_word.upper()
 
 word = pick_word()
-
 
 def rules():
     print("\nGreat! Listen up!\n")
@@ -62,7 +60,7 @@ def main_menu():
 def game_over():
     after_play = True
     while after_play:
-        play_again= input("\nPlay again? Y/N\n").upper()
+        play_again = input("\nPlay again? Y/N\n").upper()
         if play_again == "Y":
             print("\nGreat, let's play!\n")
             play_game(word)
@@ -74,6 +72,7 @@ def game_over():
 
 
 def play_game(word):
+    word = pick_word()
     letters = "_ " * len(word)
     correct_word = list(word)
     lives = 6
