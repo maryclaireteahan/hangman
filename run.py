@@ -28,6 +28,8 @@ def display_hangman(lives):
     |
     |
     |
+    |
+    |
     |___
 
 """)
@@ -41,6 +43,8 @@ def display_hangman(lives):
     |
     |
     |
+    |
+    |
     |___
 
 """)
@@ -49,8 +53,8 @@ def display_hangman(lives):
    _________
     |/   |
     |   _|_
-    |  [   ]
-    |  [_ _]
+    |  |   |
+    |  |_ _|
     |
     |
     |
@@ -60,26 +64,25 @@ def display_hangman(lives):
 """)
     elif lives == 5:
         print("""
-   ________
+   _________
     |/   |
-    |   _|
-    |  [   ]
-    |  [_ _]
+    |   _|_
+    |  |   |
+    |  |_ _|
     |    |
     |    |
     |
     |
     |___
-
 """)
     elif lives == 4:
         print("""
    _________
     |/   |
     |   _|_
-    |  [   ]
-    |  [_ _]
-    |   /|
+    |  |   |
+    |  |_ _|
+    | ---|
     |    |
     |
     |
@@ -91,9 +94,9 @@ def display_hangman(lives):
    _________
     |/   |
     |   _|_
-    |  [   ]
-    |  [_ _]
-    |   /|\
+    |  |   |
+    |  |_ _|
+    | ---|---
     |    |
     |
     |
@@ -105,12 +108,12 @@ def display_hangman(lives):
    ________
     |/   |
     |   _|_
-    |  [   ]
-    |  [_ _]
-    |   /|\
-    |    |
-    |  _/
-    |
+    |  |   |
+    |  |_ _|
+    | ---|---
+    |   _|_
+    |   | 
+    |   | 
     |___
 
 """)
@@ -119,12 +122,12 @@ def display_hangman(lives):
    ________
     |/   |
     |   _|_
-    |  [   ]
-    |  [_ _]
-    |   /|\
-    |    |
-    |   / \
-    |
+    |  |   |
+    |  |_ _|
+    | ---|---
+    |   _|_
+    |   | |
+    |   | |
     |___
 
 """)
@@ -133,12 +136,12 @@ def display_hangman(lives):
    ________
     |/   |
     |   _|_
-    |  [x x]
-    |  [_-_]
-    |   /|\
-    |    |
-    |   / \
-    |
+    |  |x x|
+    |  |_-_|
+    | ---|---
+    |   _|_
+    |   | |
+    |   | |
     |___
 
 """)
@@ -158,7 +161,8 @@ print(
 |     ██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║       |
 |     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝       |
 |                                                                            |
-|                                                                            |"""
+|                                                                            |
+"""
 )
 
 print(Style.RESET_ALL)
@@ -195,7 +199,8 @@ def main_menu():
                     " \nWould you like to read the rules? "
                     + Style.NORMAL + Fore.GREEN
                 )
-                game_rules = input(" Y/N\n" + Style.NORMAL + Fore.GREEN).upper()
+                game_rules = input(" Y/N\n"
+                                   + Style.NORMAL + Fore.GREEN).upper()
                 print(Style.RESET_ALL)
                 if game_rules == "Y":
                     dashes()
