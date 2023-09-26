@@ -1,160 +1,164 @@
 import random
 from words import word_list
 from colorama import Fore, Back, Style
+
+
 def display_hangman(lives):
-    
     if lives == 10:
-        print( """
-""")    
+        print("""
+""")
     elif lives == 9:
-        print( """
-   
-    | 
-    |              
-    |                
-    |                 
-    |               
-    |                   
-    |                
+        print("""
+
+    |
+    |
+    |
+    |
+    |
+    |
+    |
 
 """)
-    
     elif lives == 8:
-        print( """
+        print("""
    _________
-    |/        
-    |              
-    |                
-    |                 
-    |               
-    |                   
-    |___                 
+    |/
+    |
+    |
+    |
+    |
+    |
+    |___
 
 """)
 
     elif lives == 7:
         print("""
    _________
-    |/   |      
-    |    |         
-    |                
-    |                 
-    |               
-    |                   
-    |___                 
+    |/   |
+    |    |
+    |
+    |
+    |
+    |
+    |___
 
 """)
     elif lives == 6:
         print("""
-   _________       
-    |/   |              
-    |   _|_  
-    |  /   \ 
-    |  \_ _/   
-    |                         
-    |                       
-    |                         
-    |                          
-    |___                       
+   _________
+    |/   |
+    |   _|_
+    |  [   ]
+    |  [_ _]
+    |
+    |
+    |
+    |
+    |___
 
 """)
     elif lives == 5:
         print("""
-   ________               
-    |/   |                   
-    |   _|_  
-    |  /   \ 
-    |  \_ _/    
-    |    |                     
-    |    |                    
-    |                           
-    |                            
-    |___                    
+   ________
+    |/   |
+    |   _|
+    |  [   ]
+    |  [_ _]
+    |    |
+    |    |
+    |
+    |
+    |___
 
 """)
     elif lives == 4:
         print("""
-   _________             
-    |/   |               
-    |   _|_  
-    |  /   \ 
-    |  \_ _/     
-    |   /|                     
-    |    |                    
-    |                        
-    |                          
-    |___                          
+   _________
+    |/   |
+    |   _|_
+    |  [   ]
+    |  [_ _]
+    |   /|
+    |    |
+    |
+    |
+    |___
 
 """)
     elif lives == 3:
         print("""
-   _________              
-    |/   |                     
-    |   _|_  
-    |  /   \ 
-    |  \_ _/     
-    |   /|\                    
-    |    |                       
-    |                             
-    |                            
-    |___                          
+   _________
+    |/   |
+    |   _|_
+    |  [   ]
+    |  [_ _]
+    |   /|\
+    |    |
+    |
+    |
+    |___
 
 """)
     elif lives == 2:
         print("""
-   ________                   
-    |/   |                         
-    |   _|_  
-    |  /   \ 
-    |  \_ _/                          
-    |   /|\                             
-    |    |                          
-    |  _/                            
-    |                                  
-    |___                              
+   ________
+    |/   |
+    |   _|_
+    |  [   ]
+    |  [_ _]
+    |   /|\
+    |    |
+    |  _/
+    |
+    |___
 
 """)
     elif lives == 1:
         print("""
    ________
     |/   |
-    |   _|_  
-    |  /   \ 
-    |  \_ _/   
-    |   /|\         
-    |    |        
-    |  _/ \_       
-    |               
-    |___           
-    
+    |   _|_
+    |  [   ]
+    |  [_ _]
+    |   /|\
+    |    |
+    |   / \
+    |
+    |___
+
 """)
     elif lives == 0:
         print("""
    ________
     |/   |
-    |   _|_  
-    |  /x x\ 
-    |  \_-_/   
-    |   /|\         
-    |    |        
-    |  _/ \_       
-    |               
-    |___           
-    
+    |   _|_
+    |  [x x]
+    |  [_-_]
+    |   /|\
+    |    |
+    |   / \
+    |
+    |___
+
 """)
+
+
 print(
     Style.NORMAL
     + Fore.RED
     + Back.CYAN
     + """
-                                                                                
-        ██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗        
-        ██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║        
-        ███████║███████║██╔██╗ ██║██║  ███╗██╔████╔██║███████║██╔██╗ ██║        
-        ██╔══██║██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║        
-        ██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║        
-        ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝        
-                                                                                """
+|                                                                                |
+|                                                                                |
+|       ██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗         |
+|       ██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║         |
+|       ███████║███████║██╔██╗ ██║██║  ███╗██╔████╔██║███████║██╔██╗ ██║         |
+|       ██╔══██║██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║         |
+|       ██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║         |
+|       ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝         |
+|                                                                                |
+|                                                                                |"""
 )
 
 print(Style.RESET_ALL)
@@ -166,7 +170,7 @@ def dashes():
     print(Style.RESET_ALL)
 
 
-print("\nWelcome to HANGMAN!")
+print(" \nWelcome to HANGMAN!")
 
 
 def pick_word():
@@ -180,31 +184,31 @@ word = pick_word()
 def main_menu():
     before_play = True
     while before_play:
-        print("\nWould you like to play?" + Style.NORMAL + Fore.GREEN)
-        play_now = input("Y/N\n" + Style.NORMAL + Fore.GREEN).upper()
+        print(" \nWould you like to play?" + Style.NORMAL + Fore.GREEN)
+        play_now = input(" Y/N\n" + Style.NORMAL + Fore.GREEN).upper()
         print(Style.RESET_ALL)
         if play_now == "Y":
             dashes()
             before_rules = True
             while before_rules:
                 print(
-                    "\nWould you like to read the rules? "
+                    " \nWould you like to read the rules? "
                     + Style.NORMAL + Fore.GREEN
                 )
-                game_rules = input("Y/N\n" + Style.NORMAL + Fore.GREEN).upper()
+                game_rules = input(" Y/N\n" + Style.NORMAL + Fore.GREEN).upper()
                 print(Style.RESET_ALL)
                 if game_rules == "Y":
                     dashes()
                     rules()
                 elif game_rules == "N":
                     dashes()
-                    print("\nLet's play!\n")
+                    print(" \nLet's play!\n")
                     play_game(word)
                 else:
                     invalid()
                     dashes()
         elif play_now == "N":
-            print("\nThat's too bad, adios!\n")
+            print(" \nThat's too bad, adios!\n")
             dashes()
         else:
             invalid()
@@ -212,16 +216,19 @@ def main_menu():
 
 
 def rules():
-    print("\nGreat! Listen up!\n")
+    print(" \nGreat! Listen up!\n")
     print(Style.NORMAL + Fore.CYAN + "RULES")
     print(Style.RESET_ALL)
     print(
-        "\n1. Pick a letter.\n2. If the letter is in the word"
-        + " you'll see it appear in the missing letters sections.\n3."
-        + " If the letter is incorrect it'll appear in the guessed letters"
-        + " section.\n4. Be careful, each time you get a letter wrong"
-        + " you'll get closer to hanging the man. It'll only take 6 wrong"
-        + " moves to kill him, so choose wisely.\n"
+        "\n1. Pick a letter."
+        + "\n2. If the letter is in the word "
+        + "you'll see it appear in the missing letters sections."
+        + "\n3. If the letter is incorrect it'll appear "
+        + "in the guessed letters section."
+        + "\n4. Be careful, each time you get a letter wrong "
+        + "you'll get closer to hanging the man."
+        + "It'll only take 10 wrong moves to kill him, "
+        + "so choose wisely.\n"
     )
     after_rules = True
     while after_rules:
@@ -357,4 +364,3 @@ def main():
 
 
 main()
-
