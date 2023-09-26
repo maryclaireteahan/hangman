@@ -1,8 +1,9 @@
 import random
 from words import word_list
 from colorama import Fore, Back, Style
-
 import pyfiglet
+
+
 
 ASCII_art_1 = pyfiglet.figlet_format("HANGMAN")
 print(
