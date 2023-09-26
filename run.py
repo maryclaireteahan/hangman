@@ -1,11 +1,147 @@
 import random
 from words import word_list
 from colorama import Fore, Back, Style
-import pyfiglet
+def display_hangman(lives):
+    
+    if lives == 10:
+        print( """
+""")    
+    elif lives == 9:
+        print( """
+   
+    | 
+    |              
+    |                
+    |                 
+    |               
+    |                   
+    |                
 
+""")
+    
+    elif lives == 8:
+        print( """
+   _________
+    |/        
+    |              
+    |                
+    |                 
+    |               
+    |                   
+    |___                 
 
+""")
 
-ASCII_art_1 = pyfiglet.figlet_format("HANGMAN")
+    elif lives == 7:
+        print("""
+   _________
+    |/   |      
+    |    |         
+    |                
+    |                 
+    |               
+    |                   
+    |___                 
+
+""")
+    elif lives == 6:
+        print("""
+   _________       
+    |/   |              
+    |   _|_  
+    |  /   \ 
+    |  \_ _/   
+    |                         
+    |                       
+    |                         
+    |                          
+    |___                       
+
+""")
+    elif lives == 5:
+        print("""
+   ________               
+    |/   |                   
+    |   _|_  
+    |  /   \ 
+    |  \_ _/    
+    |    |                     
+    |    |                    
+    |                           
+    |                            
+    |___                    
+
+""")
+    elif lives == 4:
+        print("""
+   _________             
+    |/   |               
+    |   _|_  
+    |  /   \ 
+    |  \_ _/     
+    |   /|                     
+    |    |                    
+    |                        
+    |                          
+    |___                          
+
+""")
+    elif lives == 3:
+        print("""
+   _________              
+    |/   |                     
+    |   _|_  
+    |  /   \ 
+    |  \_ _/     
+    |   /|\                    
+    |    |                       
+    |                             
+    |                            
+    |___                          
+
+""")
+    elif lives == 2:
+        print("""
+   ________                   
+    |/   |                         
+    |   _|_  
+    |  /   \ 
+    |  \_ _/                          
+    |   /|\                             
+    |    |                          
+    |  _/                            
+    |                                  
+    |___                              
+
+""")
+    elif lives == 1:
+        print("""
+   ________
+    |/   |
+    |   _|_  
+    |  /   \ 
+    |  \_ _/   
+    |   /|\         
+    |    |        
+    |  _/ \_       
+    |               
+    |___           
+    
+""")
+    elif lives == 0:
+        print("""
+   ________
+    |/   |
+    |   _|_  
+    |  /x x\ 
+    |  \_-_/   
+    |   /|\         
+    |    |        
+    |  _/ \_       
+    |               
+    |___           
+    
+""")
 print(
     Style.NORMAL
     + Fore.RED
@@ -21,6 +157,7 @@ print(
 )
 
 print(Style.RESET_ALL)
+
 
 def dashes():
     print(Style.NORMAL + Fore.CYAN
@@ -49,7 +186,10 @@ def main_menu():
             dashes()
             before_rules = True
             while before_rules:
-                print("\nWould you like to read the rules? " + Style.NORMAL + Fore.GREEN)
+                print(
+                    "\nWould you like to read the rules? "
+                    + Style.NORMAL + Fore.GREEN
+                )
                 game_rules = input("Y/N\n" + Style.NORMAL + Fore.GREEN).upper()
                 print(Style.RESET_ALL)
                 if game_rules == "Y":
@@ -62,7 +202,6 @@ def main_menu():
                 else:
                     invalid()
                     dashes()
-                    
         elif play_now == "N":
             print("\nThat's too bad, adios!\n")
             dashes()
@@ -75,7 +214,8 @@ def rules():
     print("\nGreat! Listen up!\n")
     print(Style.NORMAL + Fore.CYAN + "RULES")
     print(Style.RESET_ALL)
-    print("\n1. Pick a letter.\n2. If the letter is in the word"
+    print(
+        "\n1. Pick a letter.\n2. If the letter is in the word"
         + " you'll see it appear in the missing letters sections.\n3."
         + " If the letter is incorrect it'll appear in the guessed letters"
         + " section.\n4. Be careful, each time you get a letter wrong"
@@ -133,9 +273,13 @@ def play_game(word):
                 lives_guesses(lives, letters_guessed)
                 dashes()
             elif guess in word:
-                print("\nGood choice!" 
-                      + Fore.GREEN + f" {guess} " 
-                      + Style.RESET_ALL + "is in the word!\n")
+                print(
+                    "\nGood choice!"
+                    + Fore.GREEN
+                    + f" {guess} "
+                    + Style.RESET_ALL
+                    + "is in the word!\n"
+                )
                 letters_guessed.append(guess)
                 correct_letters.append(guess)
                 correct_word = list(letters)
@@ -146,13 +290,17 @@ def play_game(word):
                 letters = "".join(correct_word)
                 if "_" not in letters:
                     guessed = True
+                display_hangman(lives)
                 lives_guesses(lives, letters_guessed)
                 dashes()
             elif guess not in word:
-                print(Fore.RED + f"\n{guess} " 
-                      + Style.RESET_ALL + "isn't in the word\n")
+                print(
+                    Fore.RED + f"\n{guess} " + Style.RESET_ALL
+                    + "isn't in the word\n"
+                )
                 letters_guessed.append(guess)
                 lives = lives - 1
+                display_hangman(lives)
                 lives_guesses(lives, letters_guessed)
                 dashes()
         elif not guess.isalpha() or len(guess) != 1:
@@ -162,19 +310,24 @@ def play_game(word):
                 + "\nTry again.\n"
             )
             dashes()
-
     if lives == 0:
-        print(Fore.RED +"\nSorry you lost.\n" + Style.RESET_ALL)
-        print("\nThe word was" + Fore.RED +f" {word}.\n")
+        print(Fore.RED + "\nSorry you lost.\n" + Style.RESET_ALL)
+        print("\nThe word was" + Fore.RED + f" {word}.\n")
         dashes()
         game_over()
     else:
-        print(Fore.GREEN +"\nCongratulations!" + Style.RESET_ALL)
-        print("You guessed the word" +Fore.GREEN 
-              + f" {word} "+ Style.RESET_ALL
-              + "with" +Fore.GREEN 
-              + f" {lives} " + Style.RESET_ALL
-              + "lives to go!\n")
+        print(Fore.GREEN + "\nCongratulations!" + Style.RESET_ALL)
+        print(
+            "You guessed the word"
+            + Fore.GREEN
+            + f" {word} "
+            + Style.RESET_ALL
+            + "with"
+            + Fore.GREEN
+            + f" {lives} "
+            + Style.RESET_ALL
+            + "lives to go!\n"
+        )
         dashes()
         game_over()
 
@@ -194,7 +347,7 @@ def game_over():
             dashes()
             main_menu()
         else:
-            invalid()  
+            invalid()
             dashes()
 
 
@@ -203,3 +356,4 @@ def main():
 
 
 main()
+
