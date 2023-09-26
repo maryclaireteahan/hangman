@@ -218,6 +218,10 @@ def game_over():
             invalid()
             dashes()
 
+    """_summary_
+    """
+
+
 def display_hangman(lives):
     if lives == 10:
         print("""
@@ -327,8 +331,8 @@ def display_hangman(lives):
     |  |_ _|
     | ---|---
     |   _|
-    |   | 
-    |   | 
+    |   |
+    |   |
     |___
 
 """)
