@@ -21,15 +21,9 @@ print(
 )
 
 print(Style.RESET_ALL)
-
-
-def dashes():
-    print(Style.NORMAL + Fore.CYAN
-          + "=========================================")
-    print(Style.RESET_ALL)
-
-
 print(" \nWelcome to HANGMAN!")
+print(Fore.CYAN + "---------------------"
+      + Style.RESET_ALL)
 
 
 def pick_word():
@@ -106,22 +100,6 @@ def rules():
         else:
             invalid()
             dashes()
-
-
-def invalid():
-    print(Fore.RED + "\nThat isn't a valid option.")
-    print(Style.RESET_ALL)
-
-
-def lives_guesses(lives, letters_guessed):
-    if 7 < lives <= 10:
-        print("\nlives = " + Fore.GREEN + f"{lives}\n")
-    elif 3 < lives <= 7:
-        print("\nlives = " + Fore.YELLOW + f"{lives}\n")
-    elif lives <= 3:
-        print("\nlives = " + Fore.RED + f"{lives}\n")
-    print(Style.RESET_ALL)
-    print(*letters_guessed)
 
 
 def play_game(word):
@@ -218,8 +196,27 @@ def game_over():
             invalid()
             dashes()
 
-    """_summary_
-    """
+
+def dashes():
+    print(Style.NORMAL + Fore.CYAN
+          + "=========================================")
+    print(Style.RESET_ALL)
+    
+    
+def invalid():
+    print(Fore.RED + "\nThat isn't a valid option.")
+    print(Style.RESET_ALL)
+
+
+def lives_guesses(lives, letters_guessed):
+    if 7 < lives <= 10:
+        print("\nlives = " + Fore.GREEN + f"{lives}\n")
+    elif 3 < lives <= 7:
+        print("\nlives = " + Fore.YELLOW + f"{lives}\n")
+    elif lives <= 3:
+        print("\nlives = " + Fore.RED + f"{lives}\n")
+    print(Style.RESET_ALL)
+    print(*letters_guessed)
 
 
 def display_hangman(lives):
