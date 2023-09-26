@@ -1,9 +1,28 @@
 import random
 from words import word_list
+from colorama import Fore, Back, Style
+
+
+import pyfiglet
+ASCII_art_1 = pyfiglet.figlet_format("HANGMAN")
+print(Style.NORMAL +Fore.RED + Back.CYAN + """
+██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗   ██╗
+██║  ██║██╔══██╗████╗  ██║██╔════╝ ████╗ ████║██╔══██╗████╗  ██║
+███████║███████║██╔██╗ ██║██║  ███╗██╔████╔██║███████║██╔██╗ ██║
+██╔══██║██╔══██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║
+██║  ██║██║  ██║██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║
+╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
+                                                                """)
+
+print(Style.RESET_ALL)
 
 
 print("\nWelcome to HANGMAN!")
 print("-------------------")
+
+def dashes():
+    print(Style.NORMAL +Fore.RED + Back.CYAN  + "=========================================")
+    print(Style.RESET_ALL)
 
 
 def pick_word():
@@ -17,28 +36,41 @@ word = pick_word()
 def main_menu():
     before_play = True
     while before_play:
-        play_now = input("\nWould you like to play? Y/N\n").upper()
+        print("\nWould you like to play?" + Style.NORMAL +Fore.BLACK + Back.GREEN)
+        play_now = input("Y/N\n" + Style.NORMAL +Fore.GREEN + Back.RESET).upper()
+        print(Style.RESET_ALL)
         if play_now == "Y":
             before_rules = True
             while before_rules:
-                game_rules = input("=========================================" 
-                                   + "\nWould you like to read the rules? "
-                                   + "Y/N\n").upper()
+                game_rules = input(
+                    "========================================="
+                    + "\nWould you like to read the rules? "
+                    + "Y/N\n"
+                ).upper()
                 if game_rules == "Y":
                     rules()
                 elif game_rules == "N":
-                    print("========================================="
-                          + "\nLet's play!\n")
+                    print(
+                        "========================================="
+                        + "\nLet's play!\n"
+                    )
                     play_game(word)
                 else:
-                    print("\nThat isn't a valid option."
-                          + "=========================================")
+                    print(Style.NORMAL +Fore.BLACK + Back.RED
+                          + "\nThat isn't a valid option."
+                    )
+                    dashes()
+                    print(Style.RESET_ALL)
         elif play_now == "N":
-            print("\nThat's too bad, adios!\n"
-                  + "=========================================")
+            print(
+                "\nThat's too bad, adios!\n"
+                + "========================================="
+            )
         else:
-            print("\nThat isn't a valid option.\n"
-                  + "=========================================")
+            print(
+                "\nThat isn't a valid option.\n"
+                + "========================================="
+            )
 
 
 def rules():
@@ -60,12 +92,16 @@ def rules():
                   + "\nLet's play!\n")
             play_game(word)
         elif understand == "N":
-            print("\nNo problem, lets go back to the main menu.\n"
-                  + "=========================================")
+            print(
+                "\nNo problem, lets go back to the main menu.\n"
+                + "========================================="
+            )
             main_menu()
         else:
-            print("\nThat isn't a valid option.\n" 
-                  + "=========================================")
+            print(
+                "\nThat isn't a valid option.\n"
+                + "========================================="
+            )
 
 
 def lives_guesses(lives, letters_guessed):
@@ -94,7 +130,7 @@ def play_game(word):
                 letters_guessed.append(guess)
                 correct_letters.append(guess)
                 correct_word = list(letters)
-                indices = [i for i, letter in enumerate(word) 
+                indices = [i for i, letter in enumerate(word)
                            if letter == guess]
                 for index in indices:
                     correct_word[index] = guess
@@ -121,8 +157,10 @@ def play_game(word):
         print(f"\nThe word was {word}.\n")
         game_over()
     else:
-        print("\nCongratulations!" +
-              f"You guessed the word {word} with {lives} lives to go!\n")
+        print(
+            "\nCongratulations!"
+            + f"You guessed the word {word} with {lives} lives to go!\n"
+        )
         game_over()
 
 
@@ -131,16 +169,22 @@ def game_over():
     while after_play:
         play_again = input("\nPlay again? Y/N\n").upper()
         if play_again == "Y":
-            print("\nGreat, let's play!\n"
-                  + "=========================================")
+            print(
+                "\nGreat, let's play!\n"
+                + "========================================="
+            )
             play_game(word)
         elif play_again == "N":
-            print("\nLet's go you back to the main menu.\n"
-                  + "=========================================")
+            print(
+                "\nLet's go you back to the main menu.\n"
+                + "========================================="
+            )
             main_menu()
         else:
-            print("\nThat isn't a valid option.\n" 
-                  + "=========================================")
+            print(
+                "\nThat isn't a valid option.\n"
+                + "========================================="
+            )
 
 
 def main():
