@@ -105,7 +105,13 @@ def invalid():
 
 
 def lives_guesses(lives, letters_guessed):
-    print(f"\nlives = {lives}\n")
+    if 7 < lives <= 10:
+        print("\nlives = " + Fore.GREEN + f"{lives}\n")
+    elif 3 < lives <= 7:
+        print("\nlives = " + Fore.YELLOW + f"{lives}\n")
+    elif lives <= 3:
+        print("\nlives = " + Fore.RED + f"{lives}\n")
+    print(Style.RESET_ALL)
     print(*letters_guessed)
 
 
@@ -175,7 +181,9 @@ def play_game(word):
 def game_over():
     after_play = True
     while after_play:
-        play_again = input("\nPlay again? Y/N\n").upper()
+        print("\nPlay again?\n" + Style.NORMAL + Fore.GREEN)
+        play_again = input("Y/N\n").upper()
+        print(Style.RESET_ALL)
         if play_again == "Y":
             dashes()
             print("\nGreat, let's play!\n")
@@ -185,7 +193,7 @@ def game_over():
             dashes()
             main_menu()
         else:
-            print("\nThat isn't a valid option.\n")
+            invalid()  
             dashes()
 
 
