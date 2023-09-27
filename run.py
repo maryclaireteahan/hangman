@@ -160,11 +160,11 @@ def play_game(word):
             elif guess in word:
                 display_hangman(lives)
                 print("Good choice!"
-                      + Fore.GREEN
-                      + f" {guess} "
-                      + Style.RESET_ALL
-                      + "is in the word!"
-                      )
+                    + Fore.GREEN
+                    + f" {guess} "
+                    + Style.RESET_ALL
+                    + "is in the word!"
+                )
                 letters_guessed.append(guess)
                 correct_letters.append(guess)
                 correct_word = list(letters)
@@ -190,7 +190,7 @@ def play_game(word):
         elif not guess.isalpha() or len(guess) != 1:
             display_hangman(lives)
             print(
-                Fore.RED +
+                Fore.RED + 
                 "\nNope, can't pick that."
                 + "You have to choose a single letter."
                 + "\nTry again.\n"
