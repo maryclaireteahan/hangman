@@ -27,6 +27,10 @@ print(Fore.CYAN + "---------------------"
 
 
 def pick_word():
+    """
+    Picks a random word from words.py file and
+    returns then in uppercase.
+    """
     the_word = random.choice(word_list)
     return the_word.upper()
 
@@ -35,6 +39,13 @@ word = pick_word()
 
 
 def main_menu():
+    """
+    Asks player if they would like to play the game.
+    If no the programme says goodbye.
+    If yes they are asked if they need to see the rules.
+    If yes the rules function is called.
+    If no the play_game function is called and user starts the game.
+    """
     before_play = True
     while before_play:
         print(" \nWould you like to play?" + Style.NORMAL + Fore.GREEN)
@@ -70,6 +81,12 @@ def main_menu():
 
 
 def rules():
+    """
+    Rules for the game are presented.
+    User is asked if they are ready to start the game.
+    If yes the play_game function is called and the game begins.
+    If no the user is brought back to the main_menu function.
+    """
     print(" \nGreat! Listen up!\n")
     print(Style.NORMAL + Fore.CYAN + "RULES")
     print(Style.RESET_ALL)
@@ -87,13 +104,13 @@ def rules():
     after_rules = True
     while after_rules:
         print("\nAre you ready to play?" + Style.NORMAL + Fore.GREEN)
-        understand = input("Y/N\n" + Style.NORMAL + Fore.GREEN).upper()
+        ready = input("Y/N\n" + Style.NORMAL + Fore.GREEN).upper()
         print(Style.RESET_ALL)
-        if understand == "Y":
+        if ready == "Y":
             dashes()
             print("\nLet's play!\n")
             play_game(word)
-        elif understand == "N":
+        elif ready == "N":
             print("\nNo problem, lets go back to the main menu.\n")
             dashes()
             main_menu()
@@ -103,6 +120,20 @@ def rules():
 
 
 def play_game(word):
+    """
+    A random word is selected from the pick_word function.
+    User is promted to guess a letter.
+    If the letter is in the word the user will get a message to say so and the
+    letter will appear in the correct letter and used letter section.
+    If the letter is not in the word the user will get a message to say so and the
+    letter will appear in the used letter section.
+    Each time a wrong letter is chosen the lives decrease by 1 and the hangman
+    image progresses to the next stage.
+    If the user guesses all correct letters they will get a message to saying 
+    so and how many lives they had left.
+    If thr user has 0 lives before the find all the correct 
+    letters they will get a message to say so. Thehangman will also be fully dead.
+    """
     word = pick_word()
     letters = "_" * len(word)
     lives = 10
@@ -179,6 +210,11 @@ def play_game(word):
 
 
 def game_over():
+    """
+    When the game is over the user is given the option to
+    either play again by selectin Y or returning to the main_menu
+    function by selecting N.
+    """
     after_play = True
     while after_play:
         print("\nPlay again?\n" + Style.NORMAL + Fore.GREEN)
@@ -198,17 +234,29 @@ def game_over():
 
 
 def dashes():
+    """
+    Used as dividers between each go in the game. 
+    """
     print(Style.NORMAL + Fore.CYAN
-          + "=========================================")
+          + "----------------------------------------")
     print(Style.RESET_ALL)
     
     
 def invalid():
+    """
+    If the customer selects an invalid key this
+    message will display.
+    """
     print(Fore.RED + "\nThat isn't a valid option.")
     print(Style.RESET_ALL)
 
 
 def lives_guesses(lives, letters_guessed):
+    """
+    Lives decrease by 1 for each wrong letter. Different colors for
+    0-3, 4-7 and 8-10.
+    Function also prints the letters that have been guessed so far.
+    """
     if 7 < lives <= 10:
         print("\nlives = " + Fore.GREEN + f"{lives}\n")
     elif 3 < lives <= 7:
@@ -220,6 +268,10 @@ def lives_guesses(lives, letters_guessed):
 
 
 def display_hangman(lives):
+    """
+    Tha hangman that gets displayed each time a letter is guessed. 
+    When a letter is incorrect the next stage of the image is shown.
+    """
     if lives == 10:
         print("""
 """)
@@ -364,6 +416,9 @@ def display_hangman(lives):
 
 
 def main():
+    """
+    Run all programme functions.
+    """
     main_menu()
 
 
