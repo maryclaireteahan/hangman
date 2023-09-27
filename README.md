@@ -234,22 +234,25 @@ The Flowchart for my program was created using LucidChart. It is a visual repres
 
 <details><summary>Screenshots</summary>
 
+<img src="assets/readme/images/screen/intro.png">
+<img src="assets/readme/images/no/intro_no.png">
 <img src="assets/readme/images/errors/error1_intro.png">
 <img src="assets/readme/images/errors/error2_intro.png">
 <img src="assets/readme/images/errors/error5_intro.png">
 </details>
 
-  - I tested the welcome page to make sure the only inputs accepted at "Y" or "N". If anything else is entered a warning message is produced.
+  - I tested the welcome page to make sure the only inputs accepted at "Y" or "N". If anything else for example, another letter, a number, a special symbol or a space is entered a warning message is produced.
 
  #### Rules screen 
 
 <details><summary>Screenshots</summary>
+<img src="assets/readme/images/no/rules_no.png">
 <img src="assets/readme/images/errors/error3_rules.png">
 <img src="assets/readme/images/errors/error4_rules.png">
 <img src="assets/readme/images/errors/error6_rules.png">
 </details>
 
-   - I tested the rules page to make sure the only inputs accepted at "Y" or "N". If anything else for example, a number, a special symbol or a spaceis entered a warning message is produced.
+   - I tested the rules page to make sure the only inputs accepted at "Y" or "N". If anything else for example, another letter, a number, a special symbol or a space is entered a warning message is produced.
 
 
  #### Game screen
@@ -267,6 +270,7 @@ The Flowchart for my program was created using LucidChart. It is a visual repres
 #### End game screen
 
 <details><summary>Screenshots</summary>
+<img src="assets/readme/images/no/play_again_no.png.png">
 <img src="assets/readme/images/errors/error11_play_again.png">
 </details>
 
@@ -292,7 +296,7 @@ The Flowchart for my program was created using LucidChart. It is a visual repres
 This project was deployed using Code Institutes mock terminal for Heroku.
 
 - Log in to [Heroku](https://id.heroku.com/) or create an account
-- On the main page click the button labelled New in the top right corner and from the drop-down menu   select Create New App
+- On the main page click the button labelled New in the top right corner and from the drop-down menu select Create New App
 - You must enter a unique app name
 - Next select your region
 - Click on the Create App button
