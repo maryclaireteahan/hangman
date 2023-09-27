@@ -197,6 +197,7 @@ def play_game(word):
                 + Style.RESET_ALL
             )
             dashes()
+            lives_guesses(lives, letters_guessed)
     if lives == 0:
         print(Fore.RED + "\nSorry you lost.\n" + Style.RESET_ALL)
         print("\nThe word was" + Fore.RED + f" {word}.\n")
