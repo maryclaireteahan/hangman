@@ -57,17 +57,17 @@ As a user, I want to:
 
 - #### Libraries
   * [Git](https://git-scm.com/)
-    * Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub
+    * Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub.
   * [GitHub](https://github.com/)
-    * GitHub is used to store the project's code after being pushed from Git
+    * GitHub is used to store the project's code after being pushed from Git.
   * [Heroku](https://id.heroku.com)
-    * Heroku was used to deploy the live project
+    * Heroku was used to deploy the live project.
   * [Lucidchart](https://lucid.app/)
-    * Lucidchart was used to creating the flowchart
+    * Lucidchart was used to creating the flowchart.
   * [CI Python Linter](https://pep8ci.herokuapp.com/)
-    * The PEP8 was used to validate all the Python code
+    * The PEP8 was used to validate all the Python code.
   * [Patorjk](https://patorjk.com)
-    * Patorjk (ASCII Art Generator) was used to create a banner across the game
+    * Patorjk (ASCII Art Generator) was used to create a banner across the game.
   * [Colorama](https://pypi.org/project/colorama/)
     * Colorama was used to add color to the text and ascii art.
 
@@ -87,7 +87,7 @@ The Flowchart for my program was created using LucidChart. It is a visual repres
 <img src="assets/readme/images/screen/intro.png">
 </details>
 
-- Welcomes user to the game. Asks user whether or not they would like to play
+- Welcomes user to the game. Asks user whether or not they would like to play.
 
 ### Second screen
 
@@ -143,7 +143,7 @@ The Flowchart for my program was created using LucidChart. It is a visual repres
 
 ### Testing User Stories
 
- - Be able to asily navigate through the game
+ - Be able to asily navigate through the game.
 
 | **Feature**  | **Action**                  | **Expected Result**                                          | **Actual Result** |
 | ------------ | --------------------------- | ------------------------------------------------------------ | ----------------- |
@@ -219,7 +219,7 @@ The Flowchart for my program was created using LucidChart. It is a visual repres
 
 
  ### Validation Testing
-- Used CI Python Linter to validate my code
+- Used CI Python Linter to validate my code.
 
 <details><summary>Validated code</summary>
 <img src="assets/readme/images/validation.png">
@@ -287,10 +287,10 @@ The Flowchart for my program was created using LucidChart. It is a visual repres
 
 ### How to clone the repository and push initial commit
 
-- Go to the https://github.com/maryclaireteahan/hangman repository on GitHub 
-- Click the "Code" button to the right of the screen, click HTTPs and copy the link there
-- Open a GitBash terminal and navigate to the directory where you want to locate the clone
-- On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process
+- Go to the https://github.com/maryclaireteahan/hangman repository on GitHub.
+- Click the "Code" button to the right of the screen, click HTTPs and copy the link there.
+- Open a GitBash terminal and navigate to the directory where you want to locate the clone.
+- On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process.
 - git add .
 - git commit -m "Initial commit"
 - git push
@@ -319,9 +319,9 @@ This project was deployed using Code Institutes mock terminal for Heroku.
 
 I have consulted numerous websites, individuals and slack channels to get support for the code. No code block is directly copied but some generates from information I gathered from other developers and sites:
 
- - [Kite](https://www.youtube.com/watch?v=m4nEnsavl6w&ab_channel=Kite) ffor swapping out the underscore for the correctly guessed letter in the word.
+ - [Kite](https://www.youtube.com/watch?v=m4nEnsavl6w&ab_channel=Kite) for figuring out swapping out the underscore for the correctly guessed letter in the word.
  - [Patorjik](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=HANGMAN) for the ASCII header at the beginning of the programme.
- - [Borislav Hadzhiev](https://bobbyhadz.com/blog/python-no-module-named-colorama) for checking to make sure i was using the correct version of Python in order to get colorama to work.
+ - [Borislav Hadzhiev](https://bobbyhadz.com/blog/python-no-module-named-colorama) for checking to make sure I was using the correct version of Python in order to get colorama to work.
  - [NPStation](https://www.youtube.com/watch?v=MtYw0RaZ4B0&ab_channel=NPStation) for their helpful pyton hangman tutorial video.
  - [Codereview](https://codereview.stackexchange.com/questions/101968/hangman-with-ascii) for its hangman art.
 
