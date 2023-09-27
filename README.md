@@ -75,8 +75,7 @@ As a user, I want to:
 <img src="assets/readme/images/flowchart.png">
 </details>
 
-The Flowchart for my program was created using [LucidChart](https://lucid.app/lucidchart/0ea6b3ea-15d2-4224-8d87-f4cb79c1e504/edit?view_items=~A_qna7e~gO6%2CiA_qin-594Lj%2C-GCynUns-Lhk%2CWBCyDKANY6n8%2CtC_q.ugc0ykY%2C_GCyBuRiyuT8%2CUGaBpbitNrDr%2CNB_qjtwegra6%2CyN_qZtRYAS.k%2CQN_qc7A-Pjza%2C6ACyekr7hI1x%2CBO_qRQaICLUb%2CzO_qtwRH1phF%2CKO_q84z1~jpx%2CuxCyBT4_5jLN%2CRFCyzRnMuJP-%2CUO_q5KIubTSn%2CMO_qeyLKl4_R%2C2S_qwij~7oDz%2CFR_qFxsGLjv_%2C5R_q6sAcUmY5%2CMS_q.m.BR.cC%2C~S_qmapQ8_ev%2CrQ_qbucEDzrK%2CJECy.U-fqIgL%2CWACyobxv.xXf%2CVR_qYUxERad.&invitationId=inv_7aa4366a-6d4a-4551-b117-b9f5e4cd5eb2). It is a visual representation of how the game works.
-
+The Flowchart for my program was created using LucidChart. It is a visual representation of how the game works.
 
 ## Features
 ### Welcome screen
@@ -310,20 +309,14 @@ This project was deployed using Code Institutes mock terminal for Heroku.
 - Click either Enable Automatic Deploys for automatic deployment when you push updates to GitHUB
 
 ## Credits
-- Code & Content
-  - I give credit to [Stack overflow](https://www.stackoverflow.com/), [MDN Web Docs](https://developer.mozilla.org/en-US/) & [W3 Schools](https://www.w3schools.com/) for helping me resolve issues with Python while coding through
-  - Inspiration and guidance/problem solving through project came from [kite](https://www.youtube.com/@KiteHQ), [Sanjin Dedic](https://www.youtube.com/@SanjinDedic), [Tech with Tim](https://www.youtube.com/@TechWithTim) 
-   youtube channels, and [Geeksforgeeks](https://www.geeksforgeeks.org/), [Codefather](https://codefather.tech/) websites
-  - Credits for code os.system('cls' if os.name == 'nt' else 'clear') that clear screen was found on [stackoverflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
-  - Credits for my hangman art go to  [Ascii](https://ascii.co.uk/art/hangman)
-  - To create banner for my page with title name I used [Patorjk](https://patorjk.com/)
-  - Giving credit to [Lucid chart](ttps://www.lucidchart.com/) for providing tools to easily create my flow chart
-  - Credits for centering my content in the terminal with the code  os.get_terminal_size().columns goes to [Geeksforgeeks](https://www.geeksforgeeks.org/)
 
-  - The code for linking to the Google Spreadsheet and manipulating it was taken and adapted from the Code Institute Love Sandwiches tutorial
-  - The welcome message on the start of the programm was adapted from [ASCII Art generator](https://fsymbols.com/generators/carty/)
-  - The word_wrap function for animating the text was adapted from [Animated text tutorial](https://www.youtube.com/watch?v=2h8e0tXHfk0)
-  - The bank card and bank note images from [emoji](https://getemoji.com/)
+I have consulted numerous websites, individuals and slack channels to get support for the code. No code block is directly copied but some generates from information I gathered from other developers and sites:
+
+ - [Kite](https://www.youtube.com/watch?v=m4nEnsavl6w&ab_channel=Kite) ffor swapping out the underscore for the correctly guessed letter in the word.
+ - [Patorjik](https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=HANGMAN) for the ASCII header at the beginning of the programme.
+ - [Borislav Hadzhiev](https://bobbyhadz.com/blog/python-no-module-named-colorama) for checking to make sure i was using the correct version of Python in order to get colorama to work.
+ - [NPStation](https://www.youtube.com/watch?v=MtYw0RaZ4B0&ab_channel=NPStation) for their helpful pyton hangman tutorial video.
+ - [Codereview](https://codereview.stackexchange.com/questions/101968/hangman-with-ascii) for its hangman art.
 
 
 - Acknowledgment
