@@ -158,6 +158,7 @@ def play_game(word):
                 lives_guesses(lives, letters_guessed)
                 dashes()
             elif guess in word:
+                display_hangman(lives)
                 print(
                     "\nGood choice!"
                     + Fore.GREEN
@@ -175,17 +176,16 @@ def play_game(word):
                 letters = "".join(correct_word)
                 if "_" not in letters:
                     guessed = True
-                display_hangman(lives)
                 lives_guesses(lives, letters_guessed)
                 dashes()
             elif guess not in word:
+                display_hangman(lives)
                 print(
                     Fore.RED + f"\n{guess} " + Style.RESET_ALL
                     + "isn't in the word\n"
                 )
                 letters_guessed.append(guess)
                 lives = lives - 1
-                display_hangman(lives)
                 lives_guesses(lives, letters_guessed)
                 dashes()
         elif not guess.isalpha() or len(guess) != 1:
