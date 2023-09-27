@@ -75,6 +75,7 @@ def main_menu():
         elif play_now == "N":
             print(" \nThat's too bad, adios!\n")
             dashes()
+            exit() 
         else:
             invalid()
             dashes()
@@ -193,14 +194,14 @@ def play_game(word):
                 Fore.RED + 
                 "\nNope, can't pick that."
                 + "You have to choose a single letter."
-                + "\nTry again.\n"
+                + "\nTry again."
                 + Style.RESET_ALL
             )
             dashes()
             lives_guesses(lives, letters_guessed)
     if lives == 0:
-        print(Fore.RED + "\nSorry you lost.\n" + Style.RESET_ALL)
-        print("\nThe word was" + Fore.RED + f" {word}.\n")
+        print(Fore.RED + "Sorry you lost.\n" + Style.RESET_ALL)
+        print("The word was" + Fore.RED + f" {word}.")
         dashes()
         game_over()
     else:
@@ -228,7 +229,7 @@ def game_over():
     """
     after_play = True
     while after_play:
-        print("\nPlay again?\n" + Style.NORMAL + Fore.GREEN)
+        print("Play again?" + Style.NORMAL + Fore.GREEN)
         play_again = input("Y/N\n").upper()
         print(Style.RESET_ALL)
         if play_again == "Y":
@@ -236,9 +237,9 @@ def game_over():
             print("\nGreat, let's play!\n")
             play_game(word)
         elif play_again == "N":
-            print("\nLet's go you back to the main menu.\n")
+            print("\nOkay, byyyyeeee.\n")
             dashes()
-            main_menu()
+            exit() 
         else:
             invalid()
             dashes()
@@ -269,11 +270,11 @@ def lives_guesses(lives, letters_guessed):
     Function also prints the letters that have been guessed so far.
     """
     if 7 < lives <= 10:
-        print("\nlives = " + Fore.GREEN + f"{lives}\n")
+        print("\nlives = " + Fore.GREEN + f"{lives}")
     elif 3 < lives <= 7:
-        print("\nlives = " + Fore.YELLOW + f"{lives}\n")
+        print("\nlives = " + Fore.YELLOW + f"{lives}")
     elif lives <= 3:
-        print("\nlives = " + Fore.RED + f"{lives}\n")
+        print("\nlives = " + Fore.RED + f"{lives}")
     print(Style.RESET_ALL)
     print(*letters_guessed)
 
