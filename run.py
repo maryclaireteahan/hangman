@@ -163,7 +163,7 @@ def play_game(word):
                     + Fore.GREEN
                     + f" {guess} "
                     + Style.RESET_ALL
-                    + "is in the word!\n"
+                    + "is in the word!"
                 )
                 letters_guessed.append(guess)
                 correct_letters.append(guess)
@@ -181,13 +181,14 @@ def play_game(word):
                 display_hangman(lives)
                 print(
                     Fore.RED + f"{guess} " + Style.RESET_ALL
-                    + "isn't in the word\n"
+                    + "isn't in the word"
                 )
                 letters_guessed.append(guess)
                 lives = lives - 1
                 lives_guesses(lives, letters_guessed)
                 dashes()
         elif not guess.isalpha() or len(guess) != 1:
+            display_hangman(lives)
             print(
                 Fore.RED + 
                 "\nNope, can't pick that."
