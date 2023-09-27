@@ -123,16 +123,24 @@ def play_game(word):
     """
     A random word is selected from the pick_word function.
     User is promted to guess a letter.
+
     If the letter is in the word the user will get a message to say so and the
     letter will appear in the correct letter and used letter section.
-    If the letter is not in the word the user will get a message to say so and the
+
+    If the letter is not in the word the user
+    will get a message to say so and the
     letter will appear in the used letter section.
+
     Each time a wrong letter is chosen the lives decrease by 1 and the hangman
     image progresses to the next stage.
-    If the user guesses all correct letters they will get a message to saying 
+
+    If the user guesses all correct letters they will get a message to saying
     so and how many lives they had left.
-    If thr user has 0 lives before the find all the correct 
-    letters they will get a message to say so. Thehangman will also be fully dead.
+
+    If thr user has 0 lives before the find all the correct
+    letters they will get a message to say so.
+
+    The hangman will also be fully dead.
     """
     word = pick_word()
     letters = "_" * len(word)
@@ -235,13 +243,13 @@ def game_over():
 
 def dashes():
     """
-    Used as dividers between each go in the game. 
+    Used as dividers between each go in the game.
     """
     print(Style.NORMAL + Fore.CYAN
           + "----------------------------------------")
     print(Style.RESET_ALL)
-    
-    
+
+
 def invalid():
     """
     If the customer selects an invalid key this
@@ -269,7 +277,7 @@ def lives_guesses(lives, letters_guessed):
 
 def display_hangman(lives):
     """
-    Tha hangman that gets displayed each time a letter is guessed. 
+    Tha hangman that gets displayed each time a letter is guessed.
     When a letter is incorrect the next stage of the image is shown.
     """
     if lives == 10:
