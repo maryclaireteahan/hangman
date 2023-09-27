@@ -159,8 +159,7 @@ def play_game(word):
                 dashes()
             elif guess in word:
                 display_hangman(lives)
-                print(
-                    "\nGood choice!"
+                print("Good choice!"
                     + Fore.GREEN
                     + f" {guess} "
                     + Style.RESET_ALL
