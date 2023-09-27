@@ -68,6 +68,8 @@ As a user, I want to:
     * The PEP8 was used to validate all the Python code
   * [Patorjk](https://patorjk.com)
     * Patorjk (ASCII Art Generator) was used to create a banner across the game
+  * [Colorama](https://pypi.org/project/colorama/)
+    * Colorama was used to add color to the text and ascii art.
 
 
 ## Flow Chart
