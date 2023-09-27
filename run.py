@@ -178,13 +178,13 @@ def play_game(word):
                 lives_guesses(lives, letters_guessed)
                 dashes()
             elif guess not in word:
+                lives = lives - 1
                 display_hangman(lives)
                 print(
                     Fore.RED + f"{guess} " + Style.RESET_ALL
                     + "isn't in the word"
                 )
                 letters_guessed.append(guess)
-                lives = lives - 1
                 lives_guesses(lives, letters_guessed)
                 dashes()
         elif not guess.isalpha() or len(guess) != 1:
