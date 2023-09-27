@@ -3,6 +3,7 @@
 
 In HANGMAN the player's objective is to guess the hidden word. The player has 10 lives to guess the word. If the player guesses a letter present in the word the letter will appear in the word section and they will move on to their next guess. If the player guesses a letter that is not present in the word they will lose one life and the Hangman starts to be built. Each incorrect letter brings the hangman closer to being built. If all the lives are spent before the word is guessed, the hangman is fully built and the player loses the game. If the player guesses the word before the lives are spent they win the game.
 
+![Responsive screenshot](/assets/readme/images/amiresponsive.png)
 
   - [View the Live Website Here](https://maryclaireteahan-hangman-1cf25dd2c58c.herokuapp.com/)
 ## Table of contents 
