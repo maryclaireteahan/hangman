@@ -180,7 +180,7 @@ def play_game(word):
             elif guess not in word:
                 display_hangman(lives)
                 print(
-                    Fore.RED + f"\n{guess} " + Style.RESET_ALL
+                    Fore.RED + f"{guess} " + Style.RESET_ALL
                     + "isn't in the word\n"
                 )
                 letters_guessed.append(guess)
