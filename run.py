@@ -190,9 +190,11 @@ def play_game(word):
                 dashes()
         elif not guess.isalpha() or len(guess) != 1:
             print(
+                Fore.RED + 
                 "\nNope, can't pick that."
                 + "You have to choose a single letter."
                 + "\nTry again.\n"
+                + Style.RESET_ALL
             )
             dashes()
     if lives == 0:
